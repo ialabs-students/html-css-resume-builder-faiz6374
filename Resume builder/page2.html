@@ -1,0 +1,434 @@
+
+ <!DOCTYPE html>
+ <html>
+ <head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='resume.css'>
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css"> -->
+    <script src='main.js'></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+
+ </head>
+
+<style>
+  *{
+    font-family: "Times New Roman", Times, serif;
+   }
+
+.wrapper .img-area,
+.social-icons a {
+  
+  box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
+}
+.wrapper {
+  position: relative;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px;
+}
+.wrapper .img-area {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img-area .inner-area {
+  height: calc(100% - 25px);
+  width: calc(100% - 25px);
+  border-radius: 50%;
+}
+.inner-area img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.wrapper .name {
+  font-size: 23px;
+  font-weight: 500;
+  color: #31344b;
+  margin: 10px 0 5px 0;
+}
+.wrapper .career {
+  color: #44476a;
+  font-weight: 450;
+  font-size: 16px;
+}
+.wrapper .flow {
+  color: #44476a;
+  font-weight: 450;
+  font-size: 16px;
+  margin: 10px 0 5px 0;
+}
+.wrapper .about {
+  background: #ecf0f3;
+  box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
+}
+.wrapper .about {
+  position: relative;
+  width: 150px;
+  border: none;
+  outline: none;
+  padding: 5px;
+  color: #31344b;
+  font-size: 13px;
+  font-weight: 450;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 4;
+  margin: 10px 0 15px 0;
+}
+.wrapper .flow {
+  background: #ecf0f3;
+  box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
+}
+.wrapper .flow {
+  position: relative;
+  width: 150px;
+  border: none;
+  outline: none;
+  padding: 5px;
+  color: #31344b;
+  font-size: 13px;
+  font-weight: 450;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 4;
+  margin: 15px 0 15px 0;
+}
+.wrapper .horizon {
+  width: 330px;
+  height: 2px;
+  border-width: 0;
+  background-color: #e4e4e4;
+  margin: 10px 0 5px 0;
+}
+.wrapper .info {
+  color: #44476a;
+  font-size: 14px;
+  font-weight: 500;
+  color: #31344b;
+  text-align: left;
+}
+.wrapper .social-icons {
+  text-align: center;
+}
+.social-icons a {
+  position: relative;
+  height: 35px;
+  width: 35px;
+  margin: 0 3;
+  margin-top: 5;
+  display: inline-flex;
+  text-decoration: none;
+  border-radius: 50%;
+}
+.social-icons a:hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+  background: #ecf0f3;
+  box-shadow: inset -3px -3px 7px #ffffff, inset 3px 3px 5px #ceced1;
+}
+.social-icons a i {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  line-height: 35px;
+}
+.social-icons a.fb i {
+  color: #4267b2;
+}
+.social-icons a.messenger i {
+  color: #006aff;
+}
+.social-icons a.insta i {
+  color: #dd2a7b;
+}
+.social-icons a.telegram i {
+  color: #229ed9;
+}
+.social-icons a.email i {
+  color: #34a853;
+}
+
+</style>
+
+ <body onload="onDocLoad()">
+    <!-- Navigation -->
+    <form  id="htmlContent">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3" style="padding-top: 100px;">
+
+          <div class="wrapper">
+            <div class="img-area">
+              <div class="inner-area">
+                <img
+                  src="./pic.jpeg"
+                  alt="profile"
+                />
+              </div>
+            </div>
+            <div class="name"> <span id="fName" name="fName"></span>  <span id="lName" name="lName"></span></div>
+            <!-- <div class="career">Frontend Developer</div> -->
+
+            <div class="social-icons">
+              <a href="https://www.linkedin.com/in/mohammed-faiz-44077116a/" target="_blank" class="fb"
+                ><i class='fab fa-linkedin-in'></i></a>
+             
+              <a href="??" target="_blank" class="email"
+                ><i class="fas fa-envelope"></i
+              ></a>
+
+              
+            </div>
+
+            <hr class="horizon" />
+            
+            <button  class="about"> <span id="email" name="email"></span></button>
+            <div class="info">
+             
+            </div>
+            <p class="flow"> <span id="number" name="number"></span></p>
+            <p class="flow"> <span id="dob" name="dob"></span></p>
+            <p class="flow"> <span id="gender" name="gender"></span></p>
+          
+
+
+            <hr class="horizon" />
+
+            <div class=""></div>
+            <h5 class="text-left text-uppercase text-center pb-0">Technical skills</h5>
+            <div class="col-md-10 ml-md-auto">
+              
+                <span id="skils" name="skils"></span>
+                <!-- <li >HTML, CSS, Bootstrap, React js, JavaScript, jQuery, SQL</li>
+                <li>Salesforce</li> -->
+             
+              </div>
+  
+              <hr class="horizon" />
+              
+              <h5 class="text-left text-uppercase text-center pb-0">Languages</h5>
+            <div class="col-md-10 ml-md-auto">
+              <ul class="text-left">
+                <span id="language" name="language">
+              </ul>
+              </div>
+          </div>
+
+         
+          
+        </div>
+        <div class="col-md-9">
+          <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="index.html"></a>
+               
+                
+            </div>
+        </nav>
+        <main role="main" class="container text-center">
+        
+              <div class="starter-template">
+                <!-- <h1 class="pb-0">Mohammed Faiz</h1>
+                <hr class="bottom  mb-0" />
+                <p class="lead pb-4">faiz6374@gmail.com • +918147953649 • Hyderabad, India</p> -->
+                <h5 class="text-left text-uppercase text-center pb-0">Frontend Developer</h5>
+                <p class="lead text-left">I have 2.5 years of experience in Development. Salesforce Developer with an in-depth understanding of
+                    Salesforce and its opportunities. Exceptional coding talents with proficiency in various coding languages,
+                    including Apex, Javascript, Html, Css, React js and Bootstrap. Adept at creating cloud-based applications and
+                    analyzing company processes.
+                    Results-driven Salesforce Developer bringing thorough knowledge of data management technologies to a new
+                    company. Great expertise in HTML, JavaScript, and Apex. Adept at designing, implementing and testing codes
+                    and configurations</p>
+                <div class="row text-left">
+                <div class="col-md-6">
+                <ul>
+                  <li class="h5"><strong>2 years of Software Development experience</strong></li>
+                </ul>
+                  </div>
+                <div class="col-md-6">
+                <ul>
+                  <li class="h5"><strong>6 months of Salesforce Development experience</strong></li>
+                </ul>
+                  </div>
+                  </div>
+                <hr/>
+                <h5 class="text-left text-uppercase text-center pb-0">PROFESSIONAL EXPERIENCE</h5>
+                <hr class="bottom"/>
+                <div class="row no-gutters">
+                <div class="col-sm-6 text-left h5"><strong>Prodapt Solutions Pvt Ltd,Hyderabad, India</strong></div>
+                <div class="col-sm-6 text-right"><strong>11/2021–Present</strong></div></div>
+              </div>
+              <div class="row no-gutters">
+                <div class="col-sm-6 text-left"><strong><em>Salesforce Developer</em></strong></div>
+                <!-- <div class="col-sm-6 text-right"><em>Oct 2011 - Present</em></div></div> -->
+              </div>
+              <ul class="text-left">
+                <li>Salesforce Administration , Configuration , Implementation , Lightning Web
+                    Component</li>
+                <li> Hands on experience in writing queries using SOQL and SOSL in Apex Classes</li>
+                <li>  Creating Custom Apps, Custom fields, Profiles, Applying Sharing Rules, Handling
+                    Page Layouts, Search Layouts, and Related List and defining Field Dependencies,
+                    custom buttons, Validation Rules, workflows, approval processes.</li>
+                <li> Current Salesforce certifications (e.g. Platform Developer I and OmniStudio )</li>
+                <li> Developed salesforce lightning applications using lightning components, controllers and events and used custom CSS in the
+                    components</li>
+                <li> Experience with migration of data from excel to SFDC through apex data loader such as import, export and update the data.</li>
+                <li> Excellent client-facing written and oral communication skills</li>
+              </ul>
+                <hr/>
+                <h5 class="text-left text-uppercase text-center pb-0">EDUCATION</h5>
+                <hr class="bottom"/>
+              <div class="row no-gutters">
+                <div class="col-md-10 ml-md-auto">
+        <ul class="list-unstyled text-left">
+          <li><em> Guru Nanak Dev Engineering College</em></li>
+          <li><em>Bachelor Of Engineering (Computer Science)</em></li>
+        </ul>
+        </div>
+        </div>
+                <!-- <hr/>
+                <h5 class="text-left text-uppercase text-center pb-0">Technical skills</h5>
+                <hr class="bottom"/>
+                <div class="col-md-10 ml-md-auto">
+        <ul class="text-left">
+          <li>HTML, CSS, Bootstrap, React js, JavaScript, jQuery, SQL</li>
+          <li>Salesforce</li>
+        </ul> -->
+        </div>
+              </div>
+        <!-- <div class="row mb-4">
+          <div class="col">
+            <button class="btn" src="#">Download PDF</button>
+          </div>
+        </div> -->
+        
+        
+        </main>
+        
+      </div>
+    </form>
+      </div>
+    </div>
+
+    <div class="actions text-center">
+      <button type="submit" id="generatePDF">Generate PDF</button>
+    </div>
+
+<!-- /.container -->
+
+<!-- Footer -->
+<footer class="text-center">
+    <div class="footer-above">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col col-md-12">
+                    <!--<img src="img/header_logo.png" />-->
+                    <!-- <ul class="list-inline">
+												<li class="list-inline-item sr-icons">
+                            <a href="https://www.facebook.com/john.harsh" class="btn-social btn-outline" target="_blank"><i class="fa fa-fw fa-facebook"></i></a></li>
+												<li class="list-inline-item sr-icons"><a href="https://plus.google.com/u/0/113410150478544410346" class="btn-social btn-outline" target="_blank"><i class="fa fa-fw fa-google-plus"></i></a></li>
+												<li class="list-inline-item sr-icons"><a href="https://www.instagram.com/john_harsh_3/" class="btn-social btn-outline" target="_blank"><i class="fa fa-fw fa-instagram"></i></a></li>
+												<li class="list-inline-item sr-icons"><a href="https://www.linkedin.com/in/john-harsh-iii-36974882/" class="btn-social btn-outline" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a></li>
+												<li class="list-inline-item sr-icons"><a href="https://twitter.com/john_harsh_3" class="btn-social btn-outline" target="_blank"><i class="fa fa-fw fa-twitter"></i></a></li>
+												<li class="list-inline-item sr-icons"><a href="https://codepen.io/JHarsh3/" class="btn-social btn-outline" target="_blank"><i class="fa fa-fw fa-codepen"></i></a></li>
+												<li class="list-inline-item sr-icons"><a href="https://github.com/DrCreep" class="btn-social btn-outline" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row copyright">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; John Harsh 2017</p>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</footer>
+ </body>
+ 
+ <script>
+  function onDocLoad() {
+
+
+
+    var fdata = JSON.parse(window.localStorage.getItem("formDate"));
+
+
+
+    for (var key in fdata) {
+
+
+
+      try {
+
+
+
+        document.getElementById(key).innerHTML = fdata[key];
+
+
+
+      }
+
+
+
+      catch (e) {
+
+
+
+        console.log("errorwithfields " + key);
+
+
+
+      }
+
+
+
+    }
+
+  }
+ </script>
+ <script>
+  var doc = new jsPDF();
+var specialElementHandlers = {
+    '#editor': function (element, renderer) {
+        return true;
+    }
+};
+
+//margins.left, // x coord   margins.top, { // y coord
+$('#generatePDF').click(function () {
+    doc.fromHTML($('#htmlContent').html(), 15, 15, {
+        'width': 700,
+        'elementHandlers': specialElementHandlers
+    });
+    doc.save('sample_file.pdf');
+}); 
+ </script>
+ </html>
